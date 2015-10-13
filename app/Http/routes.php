@@ -14,3 +14,14 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/test', function() {
+
+	$data = Array('foo' => 'bar');
+	Debugbar::info($data);
+	Debugbar::error('Oh No!');
+	Debugbar::warning('Watch out!');
+	Debugbar::addMessage('Special message from', 'Label');
+
+	return 'Just testing';
+});

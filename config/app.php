@@ -145,6 +145,11 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+	/*
+	 * Extra packages added for this project
+	 */
+	Barryvdh\Debugbar\ServiceProvider::class,
+
     ],
 
     /*
@@ -194,6 +199,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View'      => Illuminate\Support\Facades\View::class,
 
+	'Debugbar' => Barryvdh\Debugbar\Facade::class,
     ],
 
 ];
