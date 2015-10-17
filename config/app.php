@@ -200,6 +200,8 @@ return [
         'View'      => Illuminate\Support\Facades\View::class,
 
 	'Debugbar' => Barryvdh\Debugbar\Facade::class,
+	'LIGenerator' => 'Badcow\LoremIpsum\Generator',
+	'FakerGenerator' => 'Faker\Factory',
     ],
 
 ];

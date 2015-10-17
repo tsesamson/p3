@@ -21,7 +21,24 @@ Route::get('/test', function() {
 	Debugbar::info($data);
 	Debugbar::error('Oh No!');
 	Debugbar::warning('Watch out!');
-	Debugbar::addMessage('Special message from', 'Label');
+	Debugbar::addMessage('Special message from', 'abel');
 
-	return 'Just testing';
+
+	$generator = new LIGenerator();
+	//$generator = new Badcow\LoremIpsum\Generator();
+	$paragraphs = $generator->getParagraphs(5);
+
+	return implode('<p>', $paragraphs);
+});
+
+Route::get('/random', function() {
+
+	$faker = FakerGenerator::create();
+
+	$output = $faker->name . "<br/><br/>";
+	$output .= $faker->address . "<br/><br/>";
+	$output .= $faker->text . "<br/><br/>";
+
+	return $output;
+
 });
