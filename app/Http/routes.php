@@ -18,12 +18,15 @@ Route::get('/', function () {
 
 //Routes for Lorem Ipsum Generator
 Route::get('/lorem-ipsum', 'LoremIpsumController@getIndex');
+Route::post('/lorem-ipsum', 'LoremIpsumController@postIndex');
 
 //Routes for Random User Generator
 Route::get('/user-generator', 'UserGeneratorController@getIndex');
+Route::post('/user-generator', 'UserGeneratorController@postIndex');
 
 //Routes for XKCD Password Genereator
 Route::get('/xkcd-generator', 'XkcdGeneratorController@getIndex');
+Route::post('/xkcd-generator', 'XkcdGeneratorController@postIndex');
 
 Route::get('/test', function() {
 
