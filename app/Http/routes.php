@@ -12,8 +12,18 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('index');
+    //return view('welcome');
 });
+
+//Routes for Lorem Ipsum Generator
+Route::get('/lorem-ipsum', 'LoremIpsumController@getIndex');
+
+//Routes for Random User Generator
+Route::get('/user-generator', 'UserGeneratorController@getIndex');
+
+//Routes for XKCD Password Genereator
+Route::get('/xkcd-generator', 'XkcdGeneratorController@getIndex');
 
 Route::get('/test', function() {
 
