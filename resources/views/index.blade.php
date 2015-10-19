@@ -27,7 +27,7 @@
 		<h4>XKCD Password Generator</h4>
 		<div>Short description</div>
 		<div>Create XKCD Password for your application. Passwords that people can remember.</div>
-		<div><a href="/xkcd">Generate some passwords...</a></div>
+		<div><a href="/xkcd-generator">Generate some passwords...</a></div>
 	</div>
 </div>
 
