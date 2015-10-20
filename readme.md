@@ -4,6 +4,7 @@
 <http://p3.samsontse.com>
 
 ## Description
+The purpose of this project is to provide some online developer tools using the Laravel framework. With this excercise, I should be able to gain knowledge of the overall structure of Laravel as well as many of the key features including routes, controllers, views, forms, as well as validation.
 
 ## Demo/Screencast
 <http://www.screencast.com/t/UqFqlsCx>
