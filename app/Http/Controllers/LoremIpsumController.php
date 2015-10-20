@@ -16,16 +16,27 @@ class LoremIpsumController extends Controller
      */
     public function getIndex()
     {
-        $generator = new LIGenerator();
-	$paragraphs = $generator->getParagraphs(5);
-
-	return view('lorem-ipsum.index')->with('paragraphs', $paragraphs);
+	return view('lorem-ipsum.index');
 
     }
 
     public function postIndex(Request $request)
     {
-	return "";
+	$this->validate($request, [
+		'numOfParagraphs' => 'required|numeric',
+	]);
+
+	$numOfparagraphs = 5;	//Set the default paragraph to 5 as fallback
+
+	$data = $request->all();	//Get all the request value into data object
+
+        $generator = new LIGenerator();					//Create the Lorem Ipsum generator object
+	if(isset($_POST['numOfParagraphs'])) {
+		$numOfParagraphs = $request->input('numOfParagraphs');  //Get the post field from request object
+	}
+	$paragraphs = $generator->getParagraphs($numOfParagraphs);  	//Create the paragraphs from the generator instance
+
+	return view('lorem-ipsum.index')->with(['data' => $data, 'paragraphs' => $paragraphs]);
     }
 
 }
