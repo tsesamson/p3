@@ -1,6 +1,6 @@
 @extends('layouts.master')
 
-<div><a href="/">Back</a></div>
+<div><a href="/">&larr; Home</a></div>
 
 @section('title')
 	P3: Lorem Ipsum Generator
@@ -24,10 +24,9 @@
 		</ul>
 	@endif
 
-	<div>
 		<form method='POST' action='/lorem-ipsum'>
 			<input type="hidden" value="{{ csrf_token() }}" name="_token"/>
-			<input type="text" value="{{ old('numOfParagraphs')}}" name="numOfParagraphs" /> (Max: 50)
+			<input type="text" value="{{ old('numOfParagraphs')}}" name="numOfParagraphs" id="numOfParagraphs" /> (Max: 50)
 			<br/><br/>
 			<input type="submit" value="Generate!"/>
 		</form>

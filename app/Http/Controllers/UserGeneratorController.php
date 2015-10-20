@@ -16,20 +16,35 @@ class UserGeneratorController extends Controller
      */
     public function getIndex()
     {
-    	$faker = FakerGenerator::create();
-
-	//$output = $faker->name . "<br><br>";
-	//$output .= $faker->address . "<br><br>";
-	//$output .= $faker->text . "<br><br>";
-
-	//return $output;
-
-	return view('user-generator.index')->with('faker', $faker);
+	return view('user-generator.index');
     }
 
     public function postIndex(Request $request)
     {
-	//
+	$this->validate($request, [
+		'numOfUsers' => 'required|numeric|min:1|max:50',
+	]);
+
+	$numOfUsers = 1;	//Set the default users to 1 as fallback
+
+	$data = $request->all();	//Get all the request value to pass back to view
+	$users = array();		//Array object to hold all the generated users;
+
+	if(isset($_POST['numOfUsers'])) {
+		$numOfUsers = $request->input('numOfUsers'); //et the post field from request object for number of users
+
+		//Check to make sure it doesn't exceed 50 even though we have validation
+		if($numOfUsers > 50) {
+			$numOfUsers = 1;
+		}
+	}
+
+	for($i=0; $i<$numOfUsers; $i++) {
+    		$faker = FakerGenerator::create();	//Create the Faker object for profile generation
+		array_push($users, $faker);		//Push the profile into the users array
+	}
+
+	return view('user-generator.index')->with('users', $users);
     }
 
 }
