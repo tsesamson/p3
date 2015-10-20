@@ -19,14 +19,12 @@
 	</div>
 	<div class="col-md-12">
 		<h2>Random User Generator</h2>
-		<h3>Short description</h3>
-		<div>Create random user data for your applications. Like Lorem Ipsum, but for people.</div>
+		<h3>This tool is used to generate Temporary User name, address and/or profile as placeholder for your application. You can define the number of users to generate up to a maximum of 50.</h3>
 		<div><a href="/user-generator">Generate some users...</a></div>
 	</div>
 	<div class="col-md-12">
 		<h2>XKCD Password Generator</h2>
-		<h3>Short description</h3>
-		<div>Create XKCD Password for your application. Passwords that people can remember.</div>
+		<h3>Create XKCD Password for your application. Passwords that people can remember.</h3>
 		<div><a href="/xkcd-generator">Generate some passwords...</a></div>
 	</div>
 </div>
