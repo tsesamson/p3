@@ -33,7 +33,12 @@ class XkcdGeneratorController extends Controller
   //Function used to load the dictionary
   private function getDict() {
     try {
-      $dic = file(app_path() .'\corncob_lowercase.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+      //Check to see if it is Windows OS to determine back or forward slash
+      if(strtoupper(substr(PHP_OS, 0, 3)) === 'WIN') {
+      	$dic = file(app_path() .'\corncob_lowercase.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+      } else {
+      	$dic = file(app_path() .'/corncob_lowercase.txt', FILE_IGNORE_NEW_LINES | FILE_SKIP_EMPTY_LINES);
+      }
     } catch (Exception $e) {
       echo 'Caught exception: ', $e->getMessage(), "\n";
     }
