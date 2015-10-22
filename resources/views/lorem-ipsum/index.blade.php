@@ -1,13 +1,15 @@
 @extends('layouts.master')
 
-<div><a href="/">&larr; Home</a></div>
-
 @section('title')
 	P3: Lorem Ipsum Generator
 @stop
 
 @section('page-title')
 	P3: Lorem Ipsum Generator
+@stop
+
+@section('home-link')
+	<div><a href="/">&larr; Home</a></div>
 @stop
 
 @section('content')

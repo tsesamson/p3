@@ -1,13 +1,15 @@
 @extends('layouts.master')
 
-<div><a href="/">&larr; Home</a></div>
-
 @section('title')
 	P3: XKCD Generator
 @stop
 
 @section('page-title')
 	P3: XKCD Generator
+@stop
+
+@section('home-link')
+	<a href="/">&larr; Home</a>
 @stop
 
 @section('content')
