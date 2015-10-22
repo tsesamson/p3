@@ -20,18 +20,13 @@ class XkcdGeneratorController extends Controller
 
     public function postIndex(Request $request)
     {
-      	$numOfUsers = 1;	//Set the default users to 1 as fallback
+	$this->validate($request, [
+		'numOfWords' => 'required|numeric|min:1|max:7',
+	]);
 
         $data = $request->all();	//Get all the request value to pass back to view
         $users = array();		//Array object to hold all the generated users;
 
-        if(isset($_POST['addNum'])) {
-            $numOfUsers = $request->input('numOfUsers'); //get the post field from request object
-        }
-        if(isset($_POST['addSym'])) {
-            $numOfUsers = $request->input('numOfUsers'); //get the post field from request object
-        }
-        
         return view('xkcd-generator.index')->with('password', $this->getXkcdPassword());
     }
     
@@ -57,9 +52,9 @@ class XkcdGeneratorController extends Controller
       //Grab the options
       
       //Assign the value from the form if it is an integer
-      /*if(isset($_POST['numOfWords']) && is_numeric($_GET['numOfWords'])) {
+      if(isset($_POST['numOfWords'])) {
         $numOfWords = $_POST['numOfWords'];
-      }*/
+      }
       
       //Assign the value for demlimiter and make sure char is the length of 1
       /*if(isset($_GET['delimiter']) && strlen($_GET['delimiter'])>=1) {
