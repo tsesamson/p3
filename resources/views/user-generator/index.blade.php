@@ -28,7 +28,7 @@
 
 		<form method='POST' action='/user-generator'>
 			<input type="hidden" value="{{ csrf_token() }}" name="_token"/>
-			<input type="text" value="{{ old('numOfUsers') }}" name="numOfUsers" id="numOfUsers" /> (Max: 50)
+			<input type="text" value="{{ old('numOfUsers', '1') }}" name="numOfUsers" id="numOfUsers" /> (Max: 50)
 			<br/><br/>
 			<h3>Options</h3>
 			<input type="checkbox" name="addAddress" id="addAddress"> Add Address

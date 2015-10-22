@@ -44,6 +44,7 @@ class UserGeneratorController extends Controller
 		array_push($users, $faker);		//Push the profile into the users array
 	}
 
+	$request->flash();	//Send value of input back to form
 	return view('user-generator.index')->with('users', $users);
     }
 

@@ -32,7 +32,7 @@
 
 		<form method='POST' action='/xkcd-generator'>
 			<input type="hidden" value="{{ csrf_token() }}" name="_token"/>
-			<input type="text" value="{{ old('numOfWords') }}" name="numOfWords" id="numOfWords" /> (Max:7)
+			<input type="text" value="{{ old('numOfWords','4') }}" name="numOfWords" id="numOfWords" /> (Max:7)
 			<br/><br/>
 			<h3>Options</h3>
 			<input type="checkbox" name="addNum" id="addNum"> Add a random number (0-9)

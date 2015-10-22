@@ -27,6 +27,7 @@ class XkcdGeneratorController extends Controller
         $data = $request->all();	//Get all the request value to pass back to view
         $users = array();		//Array object to hold all the generated users;
 
+	$request->flash();	//Send value of input back to form.
         return view('xkcd-generator.index')->with('password', $this->getXkcdPassword());
     }
     

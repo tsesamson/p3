@@ -28,7 +28,7 @@
 
 		<form method='POST' action='/lorem-ipsum'>
 			<input type="hidden" value="{{ csrf_token() }}" name="_token"/>
-			<input type="text" value="{{ old('numOfParagraphs')}}" name="numOfParagraphs" id="numOfParagraphs" /> (Max: 50)
+			<input type="text" value="{{ old('numOfParagraphs','5')}}" name="numOfParagraphs" id="numOfParagraphs" /> (Max: 50)
 			<br/><br/>
 			<input type="submit" value="Generate!"/>
 		</form>

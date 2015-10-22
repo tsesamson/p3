@@ -42,7 +42,8 @@ class LoremIpsumController extends Controller
 	}
 	$paragraphs = $generator->getParagraphs($numOfParagraphs);  	//Create the paragraphs from the generator instance
 
-	return view('lorem-ipsum.index')->with(['data' => $data, 'paragraphs' => $paragraphs]);
+	$request->flash(); 	//Sends the form data back to input
+	return view('lorem-ipsum.index')->with(['paragraphs' => $paragraphs]);
     }
 
 }
