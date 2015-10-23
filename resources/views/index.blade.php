@@ -11,7 +11,7 @@
 @section('content')
 
 
-<div class="row">
+<div class="row" style="margin-bottom:50px;">
 	<div class="col-md-12">
 		<h2>Lorem Ipsum Generator</h2>
 		<h3>This tool is used to generate Lorem Ipsum paragraphs as placeholder for your applications. You can define the number of paragraphs up to the maximum of 50.</h3>
